@@ -117,11 +117,11 @@ Teszteset: `WorldRecordSavingIT`
 
 A kérés hatására a következő adatok érkeznek:
 
-- URL-ben: rekorder id (`Long`)
+- URL-ben: világrekord id (`Long`)
 
 JSON-ben:
 
-- világrekord id  (`Long`, nem lehet null)
+- új rekorder id-ja  (`Long`, nem lehet null)
 - új rekord értéke (`Double`, nem lehet null)
 
 A kérésben beérkező adatokat a fenti feltételek alapján validáld le,
@@ -164,7 +164,7 @@ Teszteset: `WorldRecordBeatIT`
 
 ## Bizonyos rekorderek listázása (12 pont)
 
-### `GET /api/recorder`
+### `GET /api/recorders`
 
 A kérés hatására az alkalmazás kilistáz bizonyos feltételeknek megfelelő rekordereket, 200-as státuszkóddal.
 
