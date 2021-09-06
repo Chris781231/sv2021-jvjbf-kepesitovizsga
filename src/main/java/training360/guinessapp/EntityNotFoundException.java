@@ -7,10 +7,10 @@ import java.net.URI;
 
 public class EntityNotFoundException extends AbstractThrowableProblem {
 
-    public EntityNotFoundException(long id, String entity) {
-        super(URI.create("guinessapp/" + entity + "-not-found"),
-                entity + " not found",
+    public EntityNotFoundException(long id, String uriName, String name) {
+        super(URI.create("guinessapp/" + uriName + "-not-found"),
+                name + " not found",
                 Status.NOT_FOUND,
-                String.format(entity + " with id %d not found", id));
+                String.format(name + " with id %d not found", id));
     }
 }

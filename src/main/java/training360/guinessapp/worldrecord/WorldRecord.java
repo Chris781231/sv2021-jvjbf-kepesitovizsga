@@ -9,7 +9,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "world_records")
+@Table(name = "world_record")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

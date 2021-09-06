@@ -4,8 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import training360.guinessapp.IsValidDate;
+import training360.guinessapp.ValidString;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 
@@ -14,7 +14,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class RecorderCreateCommand {
 
-    @NotBlank
+    @ValidString
     private String name;
 
     @NotNull

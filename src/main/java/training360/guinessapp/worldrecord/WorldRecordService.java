@@ -24,7 +24,7 @@ public class WorldRecordService {
 
     public WorldRecordDto save(WorldRecordCreateCommand command) {
         Recorder recorder = recorderRepo.findById(command.getRecorderId())
-                .orElseThrow(() -> new EntityNotFoundException(command.getRecorderId(), "Recorder"));
+                .orElseThrow(() -> new EntityNotFoundException(command.getRecorderId(), "Recorder", "Recorder"));
         WorldRecord worldRecord = new WorldRecord(command.getDescription(), command.getValue(), command.getUnitOfMeasure(), command.getDate(), recorder);
         WorldRecord savedWorldRecord = worldRecordRepo.save(worldRecord);
         return modelMapper.map(savedWorldRecord, WorldRecordDto.class);
@@ -33,10 +33,10 @@ public class WorldRecordService {
     @Transactional
     public BeatWorldRecordDto beatWorldRecord(long worldRecordId, BeatWorldRecordCommand command) {
         WorldRecord worldRecord = worldRecordRepo.findById(worldRecordId)
-                .orElseThrow(() -> new EntityNotFoundException(command.getRecorderId(), "World-record"));
+                .orElseThrow(() -> new EntityNotFoundException(command.getRecorderId(), "World-record", "World record"));
         Recorder oldRecorder = worldRecord.getRecorder();
         Recorder newRecorder = recorderRepo.findById(command.getRecorderId())
-                .orElseThrow(() -> new EntityNotFoundException(command.getRecorderId(), "Recorder"));
+                .orElseThrow(() -> new EntityNotFoundException(command.getRecorderId(), "Recorder", "Recorder"));
         Double oldRecordValue = worldRecord.getValue();
         Double newRecordValue = command.getValue();
         Double recordDifference = newRecordValue - oldRecordValue;

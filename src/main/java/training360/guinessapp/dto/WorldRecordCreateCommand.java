@@ -3,6 +3,7 @@ package training360.guinessapp.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import training360.guinessapp.ValidString;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -13,8 +14,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class WorldRecordCreateCommand {
 
-    @NotNull
-    @NotBlank
+    @ValidString
     private String description;
 
     private Double value;

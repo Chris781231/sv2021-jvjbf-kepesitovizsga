@@ -29,7 +29,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-//@Sql(statements = {"delete from world_record", "delete from recorder"})
+@Sql(statements = {"delete from world_record", "delete from recorder"})
 public class WorldRecordBeatIT {
 
     @Autowired
